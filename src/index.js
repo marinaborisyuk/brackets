@@ -1,16 +1,26 @@
 module.exports = function check(str, bracketsConfig) {
+
   let arr = [];
   for(let i = 0; i < bracketsConfig.length; i++)
   {
     arr[i] = bracketsConfig[i].join('');
   }
 
-  
-  for(let j = 0; j < arr.length;j++)
+  let count = 0;
+  while(count != arr.length)
   {
-    while(str.indexOf(arr[j]) != -1)
+    count = 0;
+    for(let j = 0; j < arr.length; )
     {
-      str = str.replace(arr[j], '');
+      if(str.indexOf(arr[j]) != -1)
+      {
+        count = 0;
+        str = str.replace(arr[j], '');
+      }
+      else
+      {
+        j++; count++;
+      }
     }
   }
 
