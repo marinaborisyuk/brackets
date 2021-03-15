@@ -2,10 +2,11 @@ module.exports = function check(str, bracketsConfig) {
   let arr = [];
   for(let i = 0; i < bracketsConfig.length; i++)
   {
-    arr = bracketsConfig[i].join('');
+    arr[i] = bracketsConfig[i].join('');
   }
 
-  for(let j = 0; j < arr.length; j++)
+  
+  for(let j = 0; j < arr.length;j++)
   {
     while(str.indexOf(arr[j]) != -1)
     {
